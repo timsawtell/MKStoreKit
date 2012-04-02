@@ -36,13 +36,10 @@
 // To avoid making mistakes map plist entries to macros on this page.
 // when you include MKStoreManager in your clss, these macros get defined there
 
-#define kNonConsumableProVersion @"au.com.sawtellsoftware.mydiggers.pro."
-#define kFeatureAId @"com.mugunthkumar.subinapptest.wk1"
-#define kConsumableFeatureBId @"com.mycompany.myapp.005"
-#define FishBasket @"FishBasket"
+#define kNonConsumableProVersion @"au.com.sawtellsoftware.mydiggers.pro"
 
 #define SERVER_PRODUCT_MODEL 0
 #define OWN_SERVER nil
-#define REVIEW_ALLOWED 1
+#define REVIEW_ALLOWED 0
 
 #define kSharedSecret @"0c4d4ba550f649ee9acd2504d51354b6"
