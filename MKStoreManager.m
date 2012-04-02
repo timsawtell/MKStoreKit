@@ -220,6 +220,22 @@ static MKStoreManager* _sharedStoreManager;
     return self;	
 }
 
+-(SKProduct *)productWithID:(NSString *)productID
+{
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        SKProduct *product = (SKProduct *)evaluatedObject;
+        if ([[product productIdentifier] isEqualToString:productID]) {
+            return YES;
+        }
+        return NO;
+    }];
+    NSArray *items = [self.purchasableObjects filteredArrayUsingPredicate:predicate];
+    if ([items count] > 0) {
+        return [items objectAtIndex:0];
+    }
+    return nil;
+}
+
 #pragma mark Internal MKStoreKit functions
 
 -(NSDictionary*) storeKitItems

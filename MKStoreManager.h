@@ -82,4 +82,6 @@
 
 -(void) restoreCompleted;
 -(void) restoreFailedWithError:(NSError*) error;
+
+-(SKProduct *)productWithID:(NSString *)productID;
 @end
