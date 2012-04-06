@@ -84,4 +84,5 @@
 -(void) restoreFailedWithError:(NSError*) error;
 
 -(SKProduct *)productWithID:(NSString *)productID;
+-(NSString *)priceForProduct:(SKProduct *)product;
 @end

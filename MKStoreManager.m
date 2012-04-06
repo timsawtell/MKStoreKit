@@ -376,6 +376,19 @@ static MKStoreManager* _sharedStoreManager;
 	return productDescriptions;
 }
 
+- (NSString *)priceForProduct:(SKProduct *)product
+{
+    if (product == nil) {
+        return @"";
+    }
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setLocale:product.priceLocale];
+    NSString *formattedString = [numberFormatter stringFromNumber:product.price];
+    return formattedString;
+}
+
 /*Call this function to get a dictionary with all prices of all your product identifers 
 
 For example, 
