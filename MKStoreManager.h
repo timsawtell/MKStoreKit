@@ -62,6 +62,8 @@
 - (NSMutableDictionary *)pricesDictionary;
 - (NSMutableArray*) purchasableObjectsDescription;
 
+@property (nonatomic, assign, getter=isProductsAvailable) BOOL isProductsAvailable;
+
 // use this method to invoke a purchase
 - (void) buyFeature:(NSString*) featureId
          onComplete:(void (^)(NSString*)) completionBlock         
@@ -76,6 +78,7 @@
 - (BOOL) isSubscriptionActive:(NSString*) featureId;
 //for testing proposes you can use this method to remove all the saved keychain data (saved purchases, etc.)
 - (BOOL) removeAllKeychainData;
+- (void) requestProductData;
 
 +(void) setObject:(id) object forKey:(NSString*) key;
 +(NSNumber*) numberForKey:(NSString*) key;

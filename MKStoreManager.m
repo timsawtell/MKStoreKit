@@ -50,9 +50,7 @@
 @property (nonatomic, strong) NSMutableDictionary *subscriptionProducts;
 
 @property (nonatomic, strong) MKStoreObserver *storeObserver;
-@property (nonatomic, assign, getter=isProductsAvailable) BOOL isProductsAvailable;
 
-- (void) requestProductData;
 - (void) startVerifyingSubscriptionReceipts;
 -(void) rememberPurchaseOfProduct:(NSString*) productIdentifier;
 -(void) addToQueue:(NSString*) productId;
@@ -63,9 +61,7 @@
 @synthesize purchasableObjects = _purchasableObjects;
 @synthesize storeObserver = _storeObserver;
 @synthesize subscriptionProducts;
-
 @synthesize isProductsAvailable;
-
 @synthesize onTransactionCancelled;
 @synthesize onTransactionCompleted;
 @synthesize onRestoreFailed;
